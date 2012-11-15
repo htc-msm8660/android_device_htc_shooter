@@ -81,7 +81,6 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 ## Kernel Details
 TARGET_KERNEL_CONFIG := shooter_defconfig
-TARGET_KERNEL_SOURCE := kernel/htc/shooter
 TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/zImage
 
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
