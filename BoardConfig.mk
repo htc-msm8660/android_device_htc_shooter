@@ -81,6 +81,7 @@ BOARD_FLASH_BLOCK_SIZE := 262144
 
 ## Kernel Details
 TARGET_KERNEL_CONFIG := shooter_defconfig
+TARGET_KERNEL_SOURCE := kernel/htc/msm8660
 TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/zImage
 
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
@@ -110,6 +111,10 @@ TARGET_DISABLE_ARM_PIE := true
 BOARD_CAMERA_USE_MM_HEAP := true
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA
 DYNAMIC_SHARED_LIBV8SO := true
+COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB -DNO_UPDATE_PREVIEW
+CAMERA_USES_SURFACEFLINGER_CLIENT_STUB := true
+BOARD_NEEDS_MEMORYHEAPPMEM := true
+BOARD_HAVE_HTC_FFC := true
 
 # Graphics / Video
 COMMON_GLOBAL_CFLAGS += -DREFRESH_RATE=60 -DNO_QCOM_MVS -DNO_HW_VSYNC
@@ -130,9 +135,6 @@ TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
 
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
-
-# Custom LUN File Path
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
 # Wifi
 WIFI_BAND                        := 802_11_ABG
@@ -157,4 +159,3 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file
 
 TARGET_EXTRA_CFLAGS += $(call cc-option,-mtune=cortex-a9,$(call cc-option,-mtune=cortex-a8)) $(call cc-option,-mcpu=cortex-a9,$(call cc-option,-mcpu=cortex-a8))
-
