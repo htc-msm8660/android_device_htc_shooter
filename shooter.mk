@@ -14,18 +14,16 @@
 # limitations under the License.
 #
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# common msm8660 configs - ignoring property overrides
-IGNORE_MSM8660_PROPERTIES := $(PRODUCT_PROPERTY_OVERRIDES)
+# common msm8660 configs
 $(call inherit-product, device/htc/msm8660-common/msm8660.mk)
-PRODUCT_PROPERTY_OVERRIDES := $(IGNORE_MSM8660_PROPERTIES)
 
 DEVICE_PACKAGE_OVERLAYS += device/htc/shooter/overlay
 
 # ramdisk stuffs
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/ramdisk/init:root/init \
     device/htc/shooter/ramdisk/init.shooter.rc:root/init.shooter.rc \
     device/htc/shooter/ramdisk/init.shooter.usb.rc:root/init.shooter.usb.rc \
     device/htc/shooter/ramdisk/ueventd.shooter.rc:root/ueventd.shooter.rc
@@ -69,8 +67,7 @@ PRODUCT_COPY_FILES += \
 # Custom media config
 PRODUCT_COPY_FILES += \
      device/htc/shooter/configs/media_profiles.xml:system/etc/media_profiles.xml \
-     device/htc/shooter/configs/media_codecs.xml:system/etc/media_codecs.xml \
-     device/htc/shooter/configs/audio_policy.conf:system/etc/audio_policy.conf
+     device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml
 
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
@@ -121,10 +118,7 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/firmware/a225_pm4.fw:system/etc/firmware/a225_pm4.fw \
     device/htc/shooter/firmware/a225p5_pm4.fw:system/etc/firmware/a225p5_pm4.fw \
     device/htc/shooter/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
-    device/htc/shooter/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-    device/htc/shooter/firmware/leia_pfp_470.fw:system/etc/firmware/leia_pfp_470.fw \
-    device/htc/shooter/firmware/leia_pm4_470.fw:system/etc/firmware/leia_pm4_470.fw \
-    device/htc/shooter/firmware/vidc_1080p.fw:system/etc/firmware/vidc_1080p.fw
+    device/htc/shooter/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
 # GPS and Light
 PRODUCT_PACKAGES += \
@@ -164,10 +158,20 @@ PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 # Fix USB transfer speeds
 PRODUCT_PROPERTY_OVERRIDES += ro.vold.umsdirtyratio=20
 
+# misc
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.setupwizard.enable_bypass=1 \
+    dalvik.vm.lockprof.threshold=500 \
+    ro.com.google.locationfeatures=1 \
+    dalvik.vm.dexopt-flags=m=y
+
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/htc/shooter/shooter-vendor.mk)
 
-## htc audio settings
+# media profiles and capabilities spec
+$(call inherit-product, device/htc/shooter/media_a1026.mk)
+
+# htc audio settings
 $(call inherit-product, device/htc/shooter/media_htcaudio.mk)
 
 # call dalvik heap config
