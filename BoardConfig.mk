@@ -46,7 +46,7 @@ BOARD_HAVE_SQN_WIMAX := true
 
 # Kernel Details
 TARGET_KERNEL_CONFIG := shooter_defconfig
-TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/zImage
+TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/kernel
 
 # Scorpion optimizations
 TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
