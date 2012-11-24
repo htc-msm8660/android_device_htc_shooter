@@ -174,3 +174,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.cdma.home.operator.numeric=310120 \
 	ro.cdma.home.operator.alpha=Sprint
 
+# Discard inherited values and use our own instead.
+PRODUCT_DEVICE := shooter
+PRODUCT_NAME := shooter
+PRODUCT_BRAND := htc
+PRODUCT_MODEL := EVO 3D
+PRODUCT_MANUFACTURER := HTC
