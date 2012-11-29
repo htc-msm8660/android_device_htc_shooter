@@ -25,7 +25,8 @@
 # the DIAG device node is world writable/readable.
 /dev/diag               0666    root        root
 
-/dev/rfkill             0660    wifi        wifi
+# wifi
+/dev/rfkill             0660    root        wifi
 
 # sensors
 /dev/akm8975_daemon     0640    compass     system

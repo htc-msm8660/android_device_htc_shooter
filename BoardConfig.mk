@@ -48,12 +48,6 @@ BOARD_HAVE_SQN_WIMAX := true
 TARGET_KERNEL_CONFIG := shooter_defconfig
 TARGET_PREBUILT_KERNEL := device/htc/shooter/prebuilt/kernel
 
-# Scorpion optimizations
-TARGET_USE_SCORPION_BIONIC_OPTIMIZATION := true
-TARGET_USE_SCORPION_PLD_SET := true
-TARGET_SCORPION_BIONIC_PLDOFFS := 6
-TARGET_SCORPION_BIONIC_PLDSIZE := 128
-
 # -DQCOM_TUNNEL_LPA_ENABLED 
 TARGET_USES_QCOM_LPA := true
 COMMON_GLOBAL_CFLAGS += -DQCOM_ICS_LPA_COMPAT
@@ -64,27 +58,8 @@ TARGET_DISABLE_ARM_PIE := true
 BOARD_CAMERA_USE_MM_HEAP := true
 BOARD_HTC_3D_SUPPORT := true
 
-# Graphics
-TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
-
 # Wifi
-WIFI_BAND                        := 802_11_ABG
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_DRIVER      := WEXT
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
-BOARD_HOSTAPD_DRIVER             := WEXT
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_wext
-BOARD_WLAN_DEVICE                := bcm4329
-WIFI_DRIVER_FW_PATH_STA          := "/vendor/firmware/fw_bcm4329.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/vendor/firmware/fw_bcm4329_apsta.bin"
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcm4329/parameters/firmware_path"
-WIFI_DRIVER_MODULE_PATH          := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_MODULE_NAME          := "bcm4329"
-WIFI_DRIVER_MODULE_ARG           := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration iface_name=wlan"
-BOARD_WLAN_DEVICE_REV            := bcm4329
-
-# Bootanimation
-TARGET_BOOTANIMATION_PRELOAD := true
+-include device/htc/msm8660-common/bcmdhd.mk
 
 # Custom LUN File Path
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/class/android_usb/android0/f_mass_storage/lun0/file

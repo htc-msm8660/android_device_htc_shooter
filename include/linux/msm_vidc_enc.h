@@ -1,173 +1,177 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
 #ifndef _MSM_VIDC_ENC_H_
 #define _MSM_VIDC_ENC_H_
+
 #include <linux/types.h>
 #include <linux/ioctl.h>
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_BASE 0x00000000
-#define VEN_S_SUCCESS (VEN_S_BASE) 
-#define VEN_S_EFAIL (VEN_S_BASE+1) 
-#define VEN_S_EFATAL (VEN_S_BASE+2) 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_EBADPARAM (VEN_S_BASE+3) 
-#define VEN_S_EINVALSTATE (VEN_S_BASE+4)
-#define VEN_S_ENOSWRES (VEN_S_BASE+5) 
-#define VEN_S_ENOHWRES (VEN_S_BASE+6) 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_EBUFFREQ (VEN_S_BASE+7) 
-#define VEN_S_EINVALCMD (VEN_S_BASE+8) 
-#define VEN_S_ETIMEOUT (VEN_S_BASE+9) 
-#define VEN_S_ENOREATMPT (VEN_S_BASE+10)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_ENOPREREQ (VEN_S_BASE+11) 
-#define VEN_S_ECMDQFULL (VEN_S_BASE+12) 
-#define VEN_S_ENOTSUPP (VEN_S_BASE+13) 
-#define VEN_S_ENOTIMPL (VEN_S_BASE+14) 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_ENOTPMEM (VEN_S_BASE+15) 
-#define VEN_S_EFLUSHED (VEN_S_BASE+16) 
-#define VEN_S_EINSUFBUF (VEN_S_BASE+17) 
-#define VEN_S_ESAMESTATE (VEN_S_BASE+18)
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_S_EINVALTRANS (VEN_S_BASE+19)
-#define VEN_INTF_VER 1
-#define VEN_MSG_INDICATION 0
-#define VEN_MSG_INPUT_BUFFER_DONE 1
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_MSG_OUTPUT_BUFFER_DONE 2
-#define VEN_MSG_NEED_OUTPUT_BUFFER 3
-#define VEN_MSG_FLUSH_INPUT_DONE 4
-#define VEN_MSG_FLUSH_OUPUT_DONE 5
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_MSG_START 6
-#define VEN_MSG_STOP 7
-#define VEN_MSG_PAUSE 8
-#define VEN_MSG_RESUME 9
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_MSG_STOP_READING_MSG 10
-#define VEN_BUFFLAG_EOS 0x00000001
-#define VEN_BUFFLAG_ENDOFFRAME 0x00000010
-#define VEN_BUFFLAG_SYNCFRAME 0x00000020
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_BUFFLAG_EXTRADATA 0x00000040
-#define VEN_BUFFLAG_CODECCONFIG 0x00000080
-#define VEN_EXTRADATA_NONE 0x001
-#define VEN_EXTRADATA_QCOMFILLER 0x002
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_EXTRADATA_SLICEINFO 0x100
-#define VEN_FRAME_TYPE_I 1 
-#define VEN_FRAME_TYPE_P 2 
-#define VEN_FRAME_TYPE_B 3 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_CODEC_MPEG4 1 
-#define VEN_CODEC_H264 2 
-#define VEN_CODEC_H263 3 
-#define VEN_PROFILE_MPEG4_SP 1 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_PROFILE_MPEG4_ASP 2 
-#define VEN_PROFILE_H264_BASELINE 3 
-#define VEN_PROFILE_H264_MAIN 4 
-#define VEN_PROFILE_H264_HIGH 5 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_PROFILE_H263_BASELINE 6 
-#define VEN_LEVEL_MPEG4_0 0x1 
-#define VEN_LEVEL_MPEG4_1 0x2 
-#define VEN_LEVEL_MPEG4_2 0x3 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_MPEG4_3 0x4 
-#define VEN_LEVEL_MPEG4_4 0x5 
-#define VEN_LEVEL_MPEG4_5 0x6 
-#define VEN_LEVEL_MPEG4_3b 0x7 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_MPEG4_6 0x8 
-#define VEN_LEVEL_H264_1 0x9 
-#define VEN_LEVEL_H264_1b 0xA 
-#define VEN_LEVEL_H264_1p1 0xB 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_H264_1p2 0xC 
-#define VEN_LEVEL_H264_1p3 0xD 
-#define VEN_LEVEL_H264_2 0xE 
-#define VEN_LEVEL_H264_2p1 0xF 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_H264_2p2 0x10 
-#define VEN_LEVEL_H264_3 0x11 
-#define VEN_LEVEL_H264_3p1 0x12 
-#define VEN_LEVEL_H264_3p2 0x13 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_H264_4 0x14 
-#define VEN_LEVEL_H263_10 0x15 
-#define VEN_LEVEL_H263_20 0x16 
-#define VEN_LEVEL_H263_30 0x17 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_H263_40 0x18 
-#define VEN_LEVEL_H263_45 0x19 
-#define VEN_LEVEL_H263_50 0x1A 
-#define VEN_LEVEL_H263_60 0x1B 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_LEVEL_H263_70 0x1C 
-#define VEN_ENTROPY_MODEL_CAVLC 1
-#define VEN_ENTROPY_MODEL_CABAC 2
-#define VEN_CABAC_MODEL_0 1 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_CABAC_MODEL_1 2 
-#define VEN_CABAC_MODEL_2 3 
-#define VEN_DB_DISABLE 1 
-#define VEN_DB_ALL_BLKG_BNDRY 2 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_DB_SKIP_SLICE_BNDRY 3 
-#define VEN_MSLICE_OFF 1
-#define VEN_MSLICE_CNT_MB 2  
-#define VEN_MSLICE_CNT_BYTE 3  
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_MSLICE_GOB 4  
-#define VEN_RC_OFF 1
-#define VEN_RC_VBR_VFR 2
-#define VEN_RC_VBR_CFR 3
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_RC_CBR_VFR 4
-#define VEN_RC_CBR_CFR 5
-#define VEN_FLUSH_INPUT 1
-#define VEN_FLUSH_OUTPUT 2
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_FLUSH_ALL 3
-#define VEN_INPUTFMT_NV12 1 
-#define VEN_INPUTFMT_NV21 2 
-#define VEN_INPUTFMT_NV12_16M2KA 3 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_ROTATION_0 1 
-#define VEN_ROTATION_90 2 
-#define VEN_ROTATION_180 3 
-#define VEN_ROTATION_270 4 
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_TIMEOUT_INFINITE 0xffffffff
-#define VEN_IR_OFF 1
-#define VEN_IR_CYCLIC 2
-#define VEN_IR_RANDOM 3
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-#define VEN_IOCTLBASE_NENC 0x800
-#define VEN_IOCTLBASE_ENC 0x850
+
+/** STATUS CODES*/
+/* Base value for status codes */
+#define VEN_S_BASE	0x00000000
+#define VEN_S_SUCCESS	(VEN_S_BASE)/* Success */
+#define VEN_S_EFAIL	(VEN_S_BASE+1)/* General failure */
+#define VEN_S_EFATAL	(VEN_S_BASE+2)/* Fatal irrecoverable failure*/
+#define VEN_S_EBADPARAM	(VEN_S_BASE+3)/* Error passed parameters*/
+/*Command called in invalid state*/
+#define VEN_S_EINVALSTATE	(VEN_S_BASE+4)
+#define VEN_S_ENOSWRES	(VEN_S_BASE+5)/* Insufficient OS resources*/
+#define VEN_S_ENOHWRES	(VEN_S_BASE+6)/*Insufficient HW resources */
+#define VEN_S_EBUFFREQ	(VEN_S_BASE+7)/* Buffer requirements were not met*/
+#define VEN_S_EINVALCMD	(VEN_S_BASE+8)/* Invalid command called */
+#define VEN_S_ETIMEOUT	(VEN_S_BASE+9)/* Command timeout. */
+/*Re-attempt was made when multiple invocation not supported for API.*/
+#define VEN_S_ENOREATMPT	(VEN_S_BASE+10)
+#define VEN_S_ENOPREREQ	(VEN_S_BASE+11)/*Pre-requirement is not met for API*/
+#define VEN_S_ECMDQFULL	(VEN_S_BASE+12)/*Command queue is full*/
+#define VEN_S_ENOTSUPP	(VEN_S_BASE+13)/*Command not supported*/
+#define VEN_S_ENOTIMPL	(VEN_S_BASE+14)/*Command not implemented.*/
+#define VEN_S_ENOTPMEM	(VEN_S_BASE+15)/*Buffer is not from PMEM*/
+#define VEN_S_EFLUSHED	(VEN_S_BASE+16)/*returned buffer was flushed*/
+#define VEN_S_EINSUFBUF	(VEN_S_BASE+17)/*provided buffer size insufficient*/
+#define VEN_S_ESAMESTATE	(VEN_S_BASE+18)
+#define VEN_S_EINVALTRANS	(VEN_S_BASE+19)
+
+#define VEN_INTF_VER			 1
+
+/*Asynchronous messages from driver*/
+#define VEN_MSG_INDICATION	0
+#define VEN_MSG_INPUT_BUFFER_DONE	1
+#define VEN_MSG_OUTPUT_BUFFER_DONE	2
+#define VEN_MSG_NEED_OUTPUT_BUFFER	3
+#define VEN_MSG_FLUSH_INPUT_DONE	4
+#define VEN_MSG_FLUSH_OUPUT_DONE	5
+#define VEN_MSG_START	6
+#define VEN_MSG_STOP	7
+#define VEN_MSG_PAUSE	8
+#define VEN_MSG_RESUME	9
+#define VEN_MSG_STOP_READING_MSG	10
+
+/*Buffer flags bits masks*/
+#define VEN_BUFFLAG_EOS	0x00000001
+#define VEN_BUFFLAG_ENDOFFRAME	0x00000010
+#define VEN_BUFFLAG_SYNCFRAME	0x00000020
+#define VEN_BUFFLAG_EXTRADATA	0x00000040
+#define VEN_BUFFLAG_CODECCONFIG	0x00000080
+
+/*Post processing flags bit masks*/
+#define VEN_EXTRADATA_NONE          0x001
+#define VEN_EXTRADATA_QCOMFILLER    0x002
+#define VEN_EXTRADATA_SLICEINFO     0x100
+
+/*ENCODER CONFIGURATION CONSTANTS*/
+
+/*Encoded video frame types*/
+#define VEN_FRAME_TYPE_I	1/* I frame type */
+#define VEN_FRAME_TYPE_P	2/* P frame type */
+#define VEN_FRAME_TYPE_B	3/* B frame type */
+
+/*Video codec types*/
+#define VEN_CODEC_MPEG4	1/* MPEG4 Codec */
+#define VEN_CODEC_H264	2/* H.264 Codec */
+#define VEN_CODEC_H263	3/* H.263 Codec */
+
+/*Video codec profile types.*/
+#define VEN_PROFILE_MPEG4_SP      1/* 1 - MPEG4 SP profile      */
+#define VEN_PROFILE_MPEG4_ASP     2/* 2 - MPEG4 ASP profile     */
+#define VEN_PROFILE_H264_BASELINE 3/* 3 - H264 Baseline profile	*/
+#define VEN_PROFILE_H264_MAIN     4/* 4 - H264 Main profile     */
+#define VEN_PROFILE_H264_HIGH     5/* 5 - H264 High profile     */
+#define VEN_PROFILE_H263_BASELINE 6/* 6 - H263 Baseline profile */
+
+/*Video codec profile level types.*/
+#define VEN_LEVEL_MPEG4_0	 0x1/* MPEG4 Level 0  */
+#define VEN_LEVEL_MPEG4_1	 0x2/* MPEG4 Level 1  */
+#define VEN_LEVEL_MPEG4_2	 0x3/* MPEG4 Level 2  */
+#define VEN_LEVEL_MPEG4_3	 0x4/* MPEG4 Level 3  */
+#define VEN_LEVEL_MPEG4_4	 0x5/* MPEG4 Level 4  */
+#define VEN_LEVEL_MPEG4_5	 0x6/* MPEG4 Level 5  */
+#define VEN_LEVEL_MPEG4_3b	 0x7/* MPEG4 Level 3b */
+#define VEN_LEVEL_MPEG4_6	 0x8/* MPEG4 Level 6  */
+
+#define VEN_LEVEL_H264_1	 0x9/* H.264 Level 1   */
+#define VEN_LEVEL_H264_1b        0xA/* H.264 Level 1b  */
+#define VEN_LEVEL_H264_1p1	 0xB/* H.264 Level 1.1 */
+#define VEN_LEVEL_H264_1p2	 0xC/* H.264 Level 1.2 */
+#define VEN_LEVEL_H264_1p3	 0xD/* H.264 Level 1.3 */
+#define VEN_LEVEL_H264_2	 0xE/* H.264 Level 2   */
+#define VEN_LEVEL_H264_2p1	 0xF/* H.264 Level 2.1 */
+#define VEN_LEVEL_H264_2p2	0x10/* H.264 Level 2.2 */
+#define VEN_LEVEL_H264_3	0x11/* H.264 Level 3   */
+#define VEN_LEVEL_H264_3p1	0x12/* H.264 Level 3.1 */
+#define VEN_LEVEL_H264_3p2	0x13/* H.264 Level 3.2 */
+#define VEN_LEVEL_H264_4	0x14/* H.264 Level 4   */
+
+#define VEN_LEVEL_H263_10	0x15/* H.263 Level 10  */
+#define VEN_LEVEL_H263_20	0x16/* H.263 Level 20  */
+#define VEN_LEVEL_H263_30	0x17/* H.263 Level 30  */
+#define VEN_LEVEL_H263_40	0x18/* H.263 Level 40  */
+#define VEN_LEVEL_H263_45	0x19/* H.263 Level 45  */
+#define VEN_LEVEL_H263_50	0x1A/* H.263 Level 50  */
+#define VEN_LEVEL_H263_60	0x1B/* H.263 Level 60  */
+#define VEN_LEVEL_H263_70	0x1C/* H.263 Level 70  */
+
+/*Entropy coding model selection for H.264 encoder.*/
+#define VEN_ENTROPY_MODEL_CAVLC	1
+#define VEN_ENTROPY_MODEL_CABAC	2
+/*Cabac model number (0,1,2) for encoder.*/
+#define VEN_CABAC_MODEL_0	1/* CABAC Model 0. */
+#define VEN_CABAC_MODEL_1	2/* CABAC Model 1. */
+#define VEN_CABAC_MODEL_2	3/* CABAC Model 2. */
+
+/*Deblocking filter control type for encoder.*/
+#define VEN_DB_DISABLE	1/* 1 - Disable deblocking filter*/
+#define VEN_DB_ALL_BLKG_BNDRY	2/* 2 - All blocking boundary filtering*/
+#define VEN_DB_SKIP_SLICE_BNDRY	3/* 3 - Filtering except sliceboundary*/
+
+/*Different methods of Multi slice selection.*/
+#define VEN_MSLICE_OFF	1
+#define VEN_MSLICE_CNT_MB	2 /*number of MBscount per slice*/
+#define VEN_MSLICE_CNT_BYTE	3 /*number of bytes count per slice.*/
+#define VEN_MSLICE_GOB	4 /*Multi slice by GOB for H.263 only.*/
+
+/*Different modes for Rate Control.*/
+#define VEN_RC_OFF	1
+#define VEN_RC_VBR_VFR	2
+#define VEN_RC_VBR_CFR	3
+#define VEN_RC_CBR_VFR	4
+#define VEN_RC_CBR_CFR	5
+
+/*Different modes for flushing buffers*/
+#define VEN_FLUSH_INPUT	1
+#define VEN_FLUSH_OUTPUT	2
+#define VEN_FLUSH_ALL	3
+
+/*Different input formats for YUV data.*/
+#define VEN_INPUTFMT_NV12	1/* NV12 Linear */
+#define VEN_INPUTFMT_NV21	2/* NV21 Linear */
+#define VEN_INPUTFMT_NV12_16M2KA	3/* NV12 Linear */
+
+/*Different allowed rotation modes.*/
+#define VEN_ROTATION_0	1/* 0 degrees */
+#define VEN_ROTATION_90	2/* 90 degrees */
+#define VEN_ROTATION_180	3/* 180 degrees */
+#define VEN_ROTATION_270	4/* 270 degrees */
+
+/*IOCTL timeout values*/
+#define VEN_TIMEOUT_INFINITE	0xffffffff
+
+/*Different allowed intra refresh modes.*/
+#define VEN_IR_OFF	1
+#define VEN_IR_CYCLIC	2
+#define VEN_IR_RANDOM	3
+
+/*IOCTL BASE CODES Not to be used directly by the client.*/
+/* Base value for ioctls that are not related to encoder configuration.*/
+#define VEN_IOCTLBASE_NENC	0x800
+/* Base value for encoder configuration ioctls*/
+#define VEN_IOCTLBASE_ENC	0x850
+
 struct venc_ioctl_msg{
- void *in;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- void *out;
+	void __user *in;
+	void __user *out;
 };
+
+/*NON ENCODER CONFIGURATION IOCTLs*/
+
 /*IOCTL params:SET: InputData - unsigned long, OutputData - NULL*/
 #define VEN_IOCTL_SET_INTF_VERSION \
 	_IOW(VEN_IOCTLBASE_NENC, 0, struct venc_ioctl_msg)
@@ -438,7 +442,6 @@ struct venc_ioctl_msg{
 
 #define VEN_IOCTL_GET_NUMBER_INSTANCES \
 	_IOR(VEN_IOCTLBASE_ENC, 46, struct venc_ioctl_msg)
-
 #define VEN_IOCTL_SET_METABUFFER_MODE \
 	_IOW(VEN_IOCTLBASE_ENC, 47, struct venc_ioctl_msg)
 
@@ -454,170 +457,159 @@ struct venc_ioctl_msg{
 	_IO(VEN_IOCTLBASE_ENC, 50)
 
 struct venc_switch{
- unsigned char status;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+	unsigned char	status;
 };
+
 struct venc_allocatorproperty{
- unsigned long mincount;
- unsigned long maxcount;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long actualcount;
- unsigned long datasize;
- unsigned long suffixsize;
- unsigned long alignment;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long bufpoolid;
+	unsigned long	 mincount;
+	unsigned long	 maxcount;
+	unsigned long	 actualcount;
+	unsigned long	 datasize;
+	unsigned long	 suffixsize;
+	unsigned long	 alignment;
+	unsigned long	 bufpoolid;
 };
+
 struct venc_bufferpayload{
- unsigned char *pbuffer;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- size_t sz;
- int fd;
- unsigned int offset;
- unsigned int maped_size;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long filled_len;
+	unsigned char *pbuffer;
+	size_t	sz;
+	int	fd;
+	unsigned int	offset;
+	unsigned int	maped_size;
+	unsigned long	filled_len;
 };
+
 struct venc_buffer{
  unsigned char *ptrbuffer;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long sz;
- unsigned long len;
- unsigned long offset;
- long long timestamp;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long flags;
- void *clientdata;
+ unsigned long	sz;
+ unsigned long	len;
+ unsigned long	offset;
+ long long	timestamp;
+ unsigned long	flags;
+ void	*clientdata;
 };
+
 struct venc_basecfg{
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long input_width;
- unsigned long input_height;
- unsigned long dvs_width;
- unsigned long dvs_height;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long codectype;
- unsigned long fps_num;
- unsigned long fps_den;
- unsigned long targetbitrate;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long inputformat;
+	unsigned long	input_width;
+	unsigned long	input_height;
+	unsigned long	dvs_width;
+	unsigned long	dvs_height;
+	unsigned long	codectype;
+	unsigned long	fps_num;
+	unsigned long	fps_den;
+	unsigned long	targetbitrate;
+	unsigned long	inputformat;
 };
+
 struct venc_profile{
- unsigned long profile;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+	unsigned long	profile;
 };
 struct ven_profilelevel{
- unsigned long level;
+	unsigned long	level;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_sessionqp{
- unsigned long iframeqp;
- unsigned long pframqp;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_qprange{
- unsigned long maxqp;
- unsigned long minqp;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_intraperiod{
- unsigned long num_pframes;
- unsigned long num_bframes;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_seqheader{
- unsigned char *hdrbufptr;
- unsigned long bufsize;
- unsigned long hdrlen;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-};
-struct venc_capability{
- unsigned long codec_types;
- unsigned long maxframe_width;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long maxframe_height;
- unsigned long maxtarget_bitrate;
- unsigned long maxframe_rate;
- unsigned long input_formats;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned char dvs;
-};
-struct venc_entropycfg{
- unsigned longentropysel;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long cabacmodel;
-};
-struct venc_dbcfg{
- unsigned long db_mode;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long slicealpha_offset;
- unsigned long slicebeta_offset;
-};
-struct venc_intrarefresh{
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long irmode;
- unsigned long mbcount;
-};
-struct venc_multiclicecfg{
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long mslice_mode;
- unsigned long mslice_size;
-};
-struct venc_bufferflush{
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long flush_mode;
-};
-struct venc_ratectrlcfg{
- unsigned long rcmode;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-};
-struct venc_voptimingcfg{
- unsigned long voptime_resolution;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_framerate{
- unsigned long fps_denominator;
- unsigned long fps_numerator;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_targetbitrate{
- unsigned long target_bitrate;
-};
-struct venc_rotation{
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long rotation;
-};
-struct venc_timeout{
- unsigned long millisec;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-};
-struct venc_headerextension{
- unsigned long header_extension;
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_msg{
- unsigned long statuscode;
- unsigned long msgcode;
- struct venc_buffer buf;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- unsigned long msgdata_size;
-};
-struct venc_recon_addr{
- unsigned long buffer_size;
- unsigned long pmem_fd;
- unsigned long offset;
-/* HTC START */
-	unsigned char *pbuffer;
-/* HTC END */
-};
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
-struct venc_recon_buff_size{
- int width;
- int height;
- int size;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- int alignment;
-};
-#endif
 
+struct venc_sessionqp{
+	unsigned long	iframeqp;
+	unsigned long	pframqp;
+};
+
+struct venc_qprange{
+	unsigned long	maxqp;
+	unsigned long	minqp;
+};
+struct venc_intraperiod{
+	unsigned long	num_pframes;
+	unsigned long	num_bframes;
+};
+struct venc_seqheader{
+	unsigned char *hdrbufptr;
+	unsigned long	bufsize;
+	unsigned long	hdrlen;
+};
+
+struct venc_capability{
+	unsigned long	codec_types;
+	unsigned long	maxframe_width;
+	unsigned long	maxframe_height;
+	unsigned long	maxtarget_bitrate;
+	unsigned long	maxframe_rate;
+	unsigned long	input_formats;
+	unsigned char	dvs;
+};
+
+struct venc_entropycfg{
+	unsigned longentropysel;
+	unsigned long	cabacmodel;
+};
+
+struct venc_dbcfg{
+	unsigned long	db_mode;
+	unsigned long	slicealpha_offset;
+	unsigned long	slicebeta_offset;
+};
+
+struct venc_intrarefresh{
+	unsigned long	irmode;
+	unsigned long	mbcount;
+};
+
+struct venc_multiclicecfg{
+	unsigned long	mslice_mode;
+	unsigned long	mslice_size;
+};
+
+struct venc_bufferflush{
+	unsigned long	flush_mode;
+};
+
+struct venc_ratectrlcfg{
+	unsigned long	rcmode;
+};
+
+struct	venc_voptimingcfg{
+	unsigned long	voptime_resolution;
+};
+struct venc_framerate{
+	unsigned long	fps_denominator;
+	unsigned long	fps_numerator;
+};
+
+struct venc_targetbitrate{
+	unsigned long	target_bitrate;
+};
+
+
+struct venc_rotation{
+	unsigned long	rotation;
+};
+
+struct venc_timeout{
+	 unsigned long	millisec;
+};
+
+struct venc_headerextension{
+	 unsigned long	header_extension;
+};
+
+struct venc_msg{
+	unsigned long	statuscode;
+	unsigned long	msgcode;
+	struct venc_buffer	buf;
+	unsigned long	msgdata_size;
+};
+
+struct venc_recon_addr{
+	unsigned char *pbuffer;
+	unsigned long buffer_size;
+	unsigned long pmem_fd;
+	unsigned long offset;
+};
+
+struct venc_recon_buff_size{
+	int width;
+	int height;
+	int size;
+	int alignment;
+};
+
+#endif /* _MSM_VIDC_ENC_H_ */

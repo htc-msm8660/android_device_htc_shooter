@@ -79,14 +79,11 @@ PRODUCT_COPY_FILES += device/htc/shooter/configs/thermald.conf:system/etc/therma
 PRODUCT_COPY_FILES += \
     device/htc/shooter/configs/vold.fstab:system/etc/vold.fstab
 
-# Broadcom Network Firmware
-PRODUCT_COPY_FILES += \
-    device/htc/shooter/firmware/fw_bcm4329.bin:system/vendor/firmware/fw_bcm4329.bin \
-    device/htc/shooter/firmware/fw_bcm4329_apsta.bin:system/vendor/firmware/fw_bcm4329_apsta.bin
-
 # BCM4329 BT Firmware
 PRODUCT_COPY_FILES += \
     device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
+
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # keylayouts
 PRODUCT_COPY_FILES += \

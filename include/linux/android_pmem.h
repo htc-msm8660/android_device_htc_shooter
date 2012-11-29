@@ -18,6 +18,18 @@
 
 #include <linux/fs.h>
 
+#define PMEM_KERNEL_TEST_MAGIC 0xc0
+#define PMEM_KERNEL_TEST_NOMINAL_TEST_IOCTL \
+	_IO(PMEM_KERNEL_TEST_MAGIC, 1)
+#define PMEM_KERNEL_TEST_ADVERSARIAL_TEST_IOCTL \
+	_IO(PMEM_KERNEL_TEST_MAGIC, 2)
+#define PMEM_KERNEL_TEST_HUGE_ALLOCATION_TEST_IOCTL \
+	_IO(PMEM_KERNEL_TEST_MAGIC, 3)
+#define PMEM_KERNEL_TEST_FREE_UNALLOCATED_TEST_IOCTL \
+	_IO(PMEM_KERNEL_TEST_MAGIC, 4)
+#define PMEM_KERNEL_TEST_LARGE_REGION_NUMBER_TEST_IOCTL \
+	_IO(PMEM_KERNEL_TEST_MAGIC, 5)
+
 #define PMEM_IOCTL_MAGIC 'p'
 #define PMEM_GET_PHYS		_IOW(PMEM_IOCTL_MAGIC, 1, unsigned int)
 #define PMEM_MAP		_IOW(PMEM_IOCTL_MAGIC, 2, unsigned int)
@@ -39,6 +51,7 @@
  * start of the mapped gpu regs (the vaddr returned by mmap) as the argument.
  */
 #define HW3D_REVOKE_GPU		_IOW(PMEM_IOCTL_MAGIC, 8, unsigned int)
+#define PMEM_CACHE_FLUSH	_IOW(PMEM_IOCTL_MAGIC, 8, unsigned int)
 #define HW3D_GRANT_GPU		_IOW(PMEM_IOCTL_MAGIC, 9, unsigned int)
 #define HW3D_WAIT_FOR_INTERRUPT	_IOW(PMEM_IOCTL_MAGIC, 10, unsigned int)
 
