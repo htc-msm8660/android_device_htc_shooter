@@ -82,7 +82,8 @@ PRODUCT_COPY_FILES += \
 
 # GPS and Light
 PRODUCT_PACKAGES += \
-    gps.shooter
+    gps.shooter \
+    lights.shooter
 
 # WiMAX support
 PRODUCT_PACKAGES += \
