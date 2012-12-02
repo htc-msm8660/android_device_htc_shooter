@@ -64,9 +64,6 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg
 
-# QC thermald config
-PRODUCT_COPY_FILES += device/htc/shooter/configs/thermald.conf:system/etc/thermald.conf
-
 # misc
 PRODUCT_COPY_FILES += \
     device/htc/shooter/configs/vold.fstab:system/etc/vold.fstab
