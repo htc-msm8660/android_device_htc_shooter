@@ -30,8 +30,6 @@
 # inherit from the proprietary version
 -include vendor/htc/shooter/BoardConfigVendor.mk
 
-TARGET_SPECIFIC_HEADER_PATH := device/htc/shooter/include
-
 TARGET_BOOTLOADER_BOARD_NAME := shooter
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := shooter
@@ -40,7 +38,7 @@ BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := shooter
 TARGET_HARDWARE_3D := true
 
 # CDMA Ril and Wimax Support
-TARGET_PROVIDES_LIBRIL := vendor/htc/shooter/proprietary/libril.so
+BOARD_USES_LEGACY_RIL := true
 COMMON_GLOBAL_CFLAGS += -DBOARD_HAVE_SQN_WIMAX
 BOARD_HAVE_SQN_WIMAX := true
 
