@@ -64,11 +64,6 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg
 
-# Custom media config
-PRODUCT_COPY_FILES += \
-     device/htc/shooter/configs/media_profiles.xml:system/etc/media_profiles.xml \
-     device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml
-
 # The gps config appropriate for this device
 PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
 
