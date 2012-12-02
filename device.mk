@@ -82,7 +82,8 @@ PRODUCT_COPY_FILES += \
 
 # GPS and Light
 PRODUCT_PACKAGES += \
-    gps.shooter
+    gps.shooter \
+    lights.shooter
 
 # WiMAX support
 PRODUCT_PACKAGES += \
@@ -159,8 +160,7 @@ PRODUCT_COPY_FILES += \
 
 # misc
 PRODUCT_COPY_FILES += \
-    device/htc/shooter/vold.fstab:system/etc/vold.fstab \
-    device/htc/shooter/apns-conf.xml:system/etc/apns-conf.xml
+    device/htc/shooter/vold.fstab:system/etc/vold.fstab
 
 ## htc audio settings
 $(call inherit-product, device/htc/shooter/media_htcaudio.mk)
