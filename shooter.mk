@@ -119,7 +119,8 @@ PRODUCT_COPY_FILES += \
 
 # GPS and Light
 PRODUCT_PACKAGES += \
-    gps.shooter
+    gps.shooter \
+    lights.shooter
 
 # Torch
 PRODUCT_PACKAGES += \
