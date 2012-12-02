@@ -64,25 +64,11 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_movie.cfg:system/etc/soundimage/srsfx_trumedia_movie.cfg \
     device/htc/shooter/dsp/soundimage/srsfx_trumedia_music.cfg:system/etc/soundimage/srsfx_trumedia_music.cfg
 
-# Custom media config
-PRODUCT_COPY_FILES += \
-     device/htc/shooter/configs/media_profiles.xml:system/etc/media_profiles.xml \
-     device/htc/msm8660-common/configs/media_codecs.xml:system/etc/media_codecs.xml
-
-# The gps config appropriate for this device
-PRODUCT_COPY_FILES += device/common/gps/gps.conf_US:system/etc/gps.conf
-
-# QC thermald config
-PRODUCT_COPY_FILES += device/htc/shooter/configs/thermald.conf:system/etc/thermald.conf
-
 # misc
 PRODUCT_COPY_FILES += \
     device/htc/shooter/configs/vold.fstab:system/etc/vold.fstab
 
-# BCM4329 BT Firmware
-PRODUCT_COPY_FILES += \
-    device/htc/msm8660-common/firmware/bcm4329.hcd:system/vendor/firmware/bcm4329.hcd
-
+# Wifi
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
 # keylayouts
@@ -117,10 +103,9 @@ PRODUCT_COPY_FILES += \
     device/htc/shooter/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
     device/htc/shooter/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw
 
-# GPS and Light
+# GPS
 PRODUCT_PACKAGES += \
-    gps.shooter \
-    lights.shooter
+    gps.shooter
 
 # Torch
 PRODUCT_PACKAGES += \

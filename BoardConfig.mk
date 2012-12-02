@@ -56,7 +56,7 @@ TARGET_DISABLE_ARM_PIE := true
 BOARD_CAMERA_USE_MM_HEAP := true
 BOARD_HTC_3D_SUPPORT := true
 
-# Wifi
+# Bluetooth/Wifi
 -include device/htc/msm8660-common/bcmdhd.mk
 
 # Custom LUN File Path
